@@ -13,15 +13,12 @@ const ItemDetailContainer = () => {
     const dataBase = firestore();
     const getItem = dataBase.collection("libros").doc(productId);
 
-    getItem
-      .get()
-      .then((querySnapshot) => {
-        setSaga({ id: querySnapshot.id, ...querySnapshot.data() });
-        setLoading(false);
-      })
+    getItem.get()
+      .then((queryDataBase) => {
+        setSaga({ id: queryDataBase.id, ...queryDataBase.data() });
+        setLoading(false);})
       .catch(() => {
-        console.log("No se cargó correctamente");
-      });
+        console.log("No se cargó correctamente");});
   }, [productId]);
 
   return (

@@ -8,13 +8,10 @@ import { firestore } from "../firebase/firebase";
 
 const ItemListContainer = ({}) => {
   const [item, setItems] = useState([]);
-
-  // Filtro los productos
-
+  // Filtro los productos por categoria
   const { categoryId } = useParams();
 
   useEffect(() => {
-    
   const dataBase = firestore();
   let libros
 
@@ -23,15 +20,13 @@ const ItemListContainer = ({}) => {
   } else{
       libros = dataBase.collection("libros")
   }
-  
+
   const librosQuery = libros.get()
 
-  librosQuery.then((querySnapshot) => {
-      setItems(querySnapshot.docs.map(doc => ({...doc.data(), id: doc.id})))
+  librosQuery.then((queryDataBase) => {
+      setItems(queryDataBase.docs.map(doc => ({...doc.data(), id: doc.id})))
   })
   .catch(() => {console.log("No se cargó el catálogo")})
-
-  console.log(dataBase);
   
 },[categoryId])
 
