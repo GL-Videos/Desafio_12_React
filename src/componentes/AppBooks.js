@@ -1,4 +1,3 @@
-// Elemento que contiene toda la etructura de la página web
 
 import { BrowserRouter, Route } from "react-router-dom";
 import Header from "./Header";
@@ -9,10 +8,8 @@ import Cart from "./Cart";
 import ShoppingContext from "../context/cartContext";
 
 
-
 const AppBooks = () => {
     return (
-        <>
         <BrowserRouter>
             <ShoppingContext>
                 <Header/>
@@ -23,9 +20,7 @@ const AppBooks = () => {
                 <Footer/>
             </ShoppingContext>
         </BrowserRouter>
-        </>
     )
 }
-
 
 export default AppBooks;

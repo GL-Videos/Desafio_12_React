@@ -10,7 +10,6 @@ const ItemDetail = ({books}) => {
   const [show, setShow] = useState(false);
 
   const getDataCounter = (dataCounter) => {
-      // console.log(`Se agregaron ${dataCounter} items al carrito de ${books.title}`);
       addItem(books, dataCounter);
       setShow(!show);
   }
@@ -25,7 +24,7 @@ const ItemDetail = ({books}) => {
             <p>{books.description}</p>
             <ItemCount stock={books.stock} initial={0} onAdd={getDataCounter}/>
             <NavLink to={`/Cart`}>
-                {show ? <button className="finishShop">Finalizar compra</button> : null}
+                {show ? <button className="finishShop">Iniciar compra</button> : null}
             </NavLink>
           </section>
         </div>

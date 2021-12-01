@@ -2,14 +2,13 @@
 import firebase from "firebase";
 import "firebase/firestore";
 
-
 const firebaseConfig = {
-    apiKey: "AIzaSyBtPYGm-1iHN-E86FvDwCs1k5uAFt4uzYI",
-    authDomain: "app-libros-18858.firebaseapp.com",
-    projectId: "app-libros-18858",
-    storageBucket: "app-libros-18858.appspot.com",
-    messagingSenderId: "907666114001",
-    appId: "1:907666114001:web:3b88f24260ac80a1ee8cf0"
+    apiKey: process.env.REACT_APP_APIKEY,
+    authDomain: process.env.REACT_APP_AUTHDOMAIN,
+    projectId: process.env.REACT_APP_PROJECTID,
+    storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+    appId: process.env.REACT_APP_APPIID
   };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);

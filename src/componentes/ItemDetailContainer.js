@@ -1,5 +1,4 @@
 import ItemDetail from "./ItemDetail";
-// import libros from "./libros.json";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { firestore } from "../firebase/firebase";

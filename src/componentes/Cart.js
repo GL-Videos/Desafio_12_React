@@ -1,14 +1,42 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { storeContext } from "../context/cartContext";
-
-
+import firebase from "firebase/app"
+import "firebase/firestore"
+import { firestore } from "../firebase/firebase";
+import FormBuyer from "../form/FormBuyer";
+import Swal from 'sweetalert2'
 
 const Cart = () => {
-
     const {products, removeItem, totalProductsPrice, clearCart} = useContext(storeContext);
+    const [showForm, setShowForm] = useState(false)
+    const [orderId, setOrderId] = useState("")
+    const [confirmation, setConfirmation] = useState(false)
 
-    if(products.length === 0){
+    const shopFinalize = () =>{
+        setShowForm(true)
+    }
+
+    const createOrder = (buyer) =>{
+        const db = firestore()
+        const orders = db.collection("order")
+
+        const newOrder = {
+            buyer,
+            products,
+            date: firebase.firestore.Timestamp.fromDate(new Date()),
+            total: totalProductsPrice()
+        }
+        
+        orders.add(newOrder).then(({id}) => {
+                setOrderId(id)
+                setConfirmation(true)
+                
+            }
+        ).catch(() => {console.log("No se pudo generar la nueva orden")})     
+    }
+
+    if(products.length === 0 && orderId === ""){
         return (
                 <div>
                     <h3 className="textCart">No hay productos agregados al Carrito</h3>
@@ -17,7 +45,28 @@ const Cart = () => {
                     </NavLink>
                 </div>
         )
-    } else {
+    } else if(orderId && confirmation){
+        Swal.fire({
+            imageUrl: "https://i.ibb.co/Vt8wrRc/test-libros0.jpg",
+            imageWidth: 400,
+            imageHeight: 300,
+            confirmButtonColor: '#525280',
+            text:"Compra exitosa!",
+            icon: 'success',
+          })
+        return(
+            <div className="orderConfirmation">
+                <h2 className="textCart">¡Muchas gracias por su compra!</h2>
+                <div className="textOrder">
+                    <h3>Su Orden N° <span className="orderId">{orderId}</span> ha sido confirmada.</h3>
+                    <NavLink to="/" exact>
+                        <button className="finishShop" onClick={() => clearCart()}>Realizar otra compra?</button>
+                    </NavLink>
+                </div>
+            </div>
+        )
+    }
+
         return (
             <div>
                 <h3 className="textCart">Carrito de Compras</h3>
@@ -33,18 +82,17 @@ const Cart = () => {
                         </div>
                     ))}
                 </div>
-                    <h3 className="textCartFinish">Total de la compra: $ {totalProductsPrice()}</h3>
+                <h3 className="textCartFinish">Total de la compra: $ {totalProductsPrice()}</h3>
                 <div className="keypadCart">
-                    <NavLink to="/" exact>
-                        <button className="buttonCart">Seguir Comprando</button>
-                    </NavLink>
-                    <button className="finishShop">Finalizar</button>
+                    <button className="finishShop" onClick={shopFinalize}>Finalizar Compra</button>
+                        <NavLink to="/" exact>
+                            <button className="buttonCart">Agregar Libros</button>
+                        </NavLink>
                     <button className="btnEmpty" onClick={() => clearCart()}>Limpiar Carrito</button>
                 </div>
+                {showForm ? <FormBuyer createOrder={createOrder}/> : null}
             </div>
         )
     }
-
-}
 
 export default Cart

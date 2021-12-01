@@ -17,7 +17,7 @@ const ShoppingContext = ({children}) => {
             setProducts([...products, {...books, dataCounter }])
         }
     }
-
+    
     const isInCart = (books) => {
         return products.find(item => item.id === books.id)
     }

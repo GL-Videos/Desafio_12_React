@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Aplicación E-Commerce para el curso de React en CODERHOUSE:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Proyecto hecho en el curso de FrontEnd enfocado en un e-commerce (temática libros digitales) que posee las siguientes características:
 
-## Available Scripts
+- Listado de todos los artículos disponibles en la página principal.
+- Barra de navegación (React-Router-DOM: Usado para el sistema de navegación entre páginas para que funcione como una single-page application): link por categoría, carrito de compras.
+- Filtro de productos por categorías (id), utilizando el menú de navegación.
+- Detalle de producto, al seleccionar un producto en específico.
+- Contador en cada producto para seleccionar la cantidad que se desea comprar, con límite de stock.
+- En cada producto un botón de evento onClick dentro de un ternario para iniciar la compra en el carrito si se agrega alguna unidad en el contador.
+- Icono de carrito de compras didáctico que muestra la cantidad de productos agregados.
+- Agregar o borrar productos del carrito de compras.
+- Suma automática del importe parcial por productos o final del carrito de compras.
+- Uso de Firebase: Plataforma móvil de Google que te ayuda a desarrollar apps de alta calidad con rapidez sin preocuparnos de tener un BackEnd.
+- Context para uso de las propiedades entre componentes.
+- Generar N° de orden de pago.
 
-In the project directory, you can run:
+####Demostración en formato GIF:
 
-### `npm start`
+![GIF](public/libroteca.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+####Tecnologías, librerías, frameworks, plataformas usadas:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- JavaScript.
+- CSS.
+- HTML.
+- React.
+- React-Router-DOM.
+- React-Icons para los iconos.
+- Firebase/Firestore (persistencia de datos). 
+- CDN de Google Font (en HTML)  para las fuertes.
+- SweetAlert2 (reemplazo para los alertas de JS).
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+####Extra:
+Se implementó **.env** para encriptar los datos personales de firebase. Igualmente para esta entrega se dejaron las credenciales del proyecto.
 
-### `npm run build`
+####Instalación (Este proyecto requiere NodeJS para su ejecución): 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. git clone https://github.com/GL-Videos/Proyecto_final_React_libreria_digital.git
+2. cd Proyecto_final_React_libreria_digital
+3. `npm install`
+4. `npm start`
+5. http://localhost:3000/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+####Sitio Web (Netlify):
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+https://libroteca-glvideos.netlify.app/
 
-### `npm run eject`
+####Desarrollado por:
+#####Gabriela Lupidi.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
