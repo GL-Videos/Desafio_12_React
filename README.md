@@ -38,7 +38,7 @@ Se implementó **.env** para encriptar los datos personales de firebase. Igualme
 
 ### Instalación (Este proyecto requiere NodeJS para su ejecución): 
 
-1. git clone https://github.com/GL-Videos/Proyecto_final_React_libreria_digital.git
+1. git clone https://github.com/GL-Videos/Proyecto_Final_ReactJS.git
 2. cd Proyecto_final_React_libreria_digital
 3. `npm install`
 4. `npm start`
