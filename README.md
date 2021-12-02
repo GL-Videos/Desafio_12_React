@@ -36,7 +36,7 @@
 
 Se implementó **.env** para encriptar los datos personales de firebase. Igualmente para esta entrega se dejaron las credenciales del proyecto.
 
-### Instalación (Este proyecto requiere NodeJS para su ejecución): 
+**### Instalación** (Este proyecto requiere NodeJS para su ejecución): 
 
 1. git clone https://github.com/GL-Videos/Proyecto_Final_ReactJS.git
 2. cd Proyecto_final_React_libreria_digital
@@ -48,8 +48,8 @@ Se implementó **.env** para encriptar los datos personales de firebase. Igualme
 
 https://libroteca-glvideos.netlify.app/
 
-## Desarrollado por:
+### Desarrollado por:
 
-### Gabriela Lupidi.
+#### Gabriela Lupidi.
 
 
