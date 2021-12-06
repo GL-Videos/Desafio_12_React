@@ -28,7 +28,7 @@
 - React-Router-DOM.
 - React-Icons para los iconos.
 - Firebase/Firestore (persistencia de datos). 
-- CDN de Google Font (en HTML)  para las fuertes.
+- CDN de Google Font (en HTML)  para las fuentes.
 - SweetAlert2 (reemplazo para los alertas de JS).
 
 
